@@ -12,6 +12,25 @@
 
     <h5 id="add"></h5>
 
+    <script>
+        let students = `[
+            {
+                "first": "Maor",
+                "last": "Beeri",
+                "age": 28,
+                "height": 1.77
+            },
+
+            {
+                "first": "Dan",
+                "last": "Hanegbi",
+                "age": 27,
+                "height": 1.6
+            }
+        ]`
+        console.log(JSON.parse(students)[1].last);
+    </script>
+
 
     <script src="home.js"></script>
 </body>
