@@ -22,9 +22,25 @@ console.log(parseFloat(value) < parseFloat(max)); // ---- false ??????
 var userName = prompt("Please enter your name");
 
 function hello(userName) {
-  return document.getElementById("someText").innerHTML = "hello there, " + userName;
+  return (document.getElementById("someText").innerHTML =
+    "hello there, " + userName);
+}
+
+function add() {
+
+  if (arguments.length) {
+    var sum = 0;
+    for (let num of arguments)
+      sum += num;
+    return sum;
+   
+  }
+
+  return 0;
 }
 
 hello(userName);
+
+document.getElementById("add").innerHTML = add();
 
 
