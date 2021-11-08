@@ -1,0 +1,21 @@
+
+.container-1{
+    background: rgba(171, 233, 72, 0.774);
+}
+
+.flex-box-container-1 {
+  display: flex;
+  border: 1px solid black;
+  padding: 10px;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.flex-box-container-1 div{
+
+    padding: 10px;
+    border: 1px solid black;
+    align-items: center;
+    
+}
