@@ -14,16 +14,18 @@ function reset() {
 }
 
 //Cat Generator:
+
 function generateCat() {
   var image = document.createElement("img");
   image.classList.add("magic-cat");
-  var div = document.getElementById("flex-cat-gen");
   image.src =
     "http://thecatapi.com/api/images/get?format=src&type=gif&timestamp";
+
+  var div = document.getElementById("flex-cat-gen");
   div.appendChild(image);
 }
 
-//rps:
+//rps:A
 
 function rpsGame(yourChoice) {
   var humanChoice, botChoice;
@@ -43,7 +45,6 @@ function rpsGame(yourChoice) {
 
 // renders result to user
 function rpsFrontEnd(humanImg, botImg, finalMessage) {
-
   var imagesDB = {
     rock: document.getElementById("rock").src,
     paper: document.getElementById("paper").src,
@@ -72,7 +73,7 @@ function rpsFrontEnd(humanImg, botImg, finalMessage) {
   messageDiv.innerHTML =
     "<h2 style='color:" +
     finalMessage["color"] +
-    "; font-size:50px; padding:30px; style='text-shadow: 2px 2px 5px black'>" +
+    "; font-size:50px; padding:30px; style='text-shadow: 2px 2px 5px black;'>" +
     finalMessage["message"] +
     "</h1>";
 
@@ -100,7 +101,7 @@ function decideWinner(yourChoice, computerChoice) {
 }
 
 function randomNum() {
-  return Math.floor(Math.random() * 3);
+  return Math.floor(Math.random() * 3); //random number: 0 | 1 | 2
 }
 
 function numberToChoice(num) {
