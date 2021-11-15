@@ -89,6 +89,7 @@ function finalMessage([yourScore, computerScore]) {
 }
 
 function decideWinner(yourChoice, computerChoice) {
+  // score map
   var rpsObj = {
     rock: { rock: 0.5, paper: 0, scissors: 1 },
     paper: { rock: 1, paper: 0.5, scissors: 0 },
@@ -106,4 +107,68 @@ function randomNum() {
 
 function numberToChoice(num) {
   return ["rock", "paper", "scissors"][num];
+}
+
+//---------------Challenge 4: Buttons And Colors --------------
+
+var allButtons = document.getElementsByTagName("button");
+
+var copyAllButtons = []; // save buttons color
+for (let i = 0; i < allButtons.length; i++) {
+  copyAllButtons.push(allButtons[i].classList[1]);
+}
+
+console.log("allButtons:", copyAllButtons);
+
+function buttonColorChange(btnSelection) {
+  if (btnSelection.value === "red") btnRed();
+  if (btnSelection.value === "green") btnGreen();
+  if (btnSelection.value === "random") btnRandom();
+  if (btnSelection.value === "reset") btnReset();
+  if (btnSelection.value === "grey") btnGrey();
+}
+
+function btnRandom() {
+  clearBtnColors();
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].classList.add(randomColor());
+  }
+}
+
+function btnReset() {
+  clearBtnColors();
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].classList.add(copyAllButtons[i]);
+  }
+}
+
+function btnRed() {
+  clearBtnColors();
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].classList.add("btn-danger");
+  }
+}
+
+function btnGreen() {
+  clearBtnColors();
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].classList.add("btn-success");
+  }
+}
+
+function btnGrey() {
+  clearBtnColors();
+  for (let i = 0; i < allButtons.length; i++) {
+    allButtons[i].classList.add('btn-secondary');
+  }
+}
+
+function clearBtnColors() {
+  for (let i = 0; i < allButtons.length; i++)
+    allButtons[i].classList.remove(allButtons[i].classList[1]);
+}
+
+function randomColor() {
+  let randomNum = Math.floor(Math.random() * allButtons.length);
+  return copyAllButtons[randomNum];
 }

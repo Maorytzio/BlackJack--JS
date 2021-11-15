@@ -28,7 +28,7 @@
             </div>
 
             <div>
-                <button class="btn btn-warning text-black " onclick="reset()">Rest</button>
+                <button class="btn btn-warning " onclick="reset()">Rest</button>
             </div>
         </div>
 
@@ -62,8 +62,28 @@
                 onclick="rpsGame(this)">
         </div>
 
+    </div>
 
+    <div class="container-4 google-font">
 
+        <h2 id="change-my-color">Challenge 4: Buttons And Colors</h2>
+        <div class="flex-box-pick-color">
+            <form action="">
+                <select name="backdrop" id="background" onchange="buttonColorChange(this)">
+                    <option value="random">Random</option>
+                    <option value="red">Red</option>
+                    <option value="green">Green</option>
+                    <option value="grey">Grey</option>
+                    <option value="reset">Reset</option>
+                </select>
+            </form>
+
+            <button class="btn btn-primary">Wee!</button>
+            <button class="btn btn-danger">Yahoo</button>
+            <button class="btn btn-warning">Google</button>
+            <button class="btn btn-success">Facebook</button>
+            <button class="btn btn-secondary">test</button>
+        </div>
 
     </div>
 
